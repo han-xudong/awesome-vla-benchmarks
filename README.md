@@ -1,26 +1,29 @@
 # Awesome VLA Benchmarks [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A comprehensive, curated list of benchmarks for evaluating Vision-Language-Action (VLA) models — covering robotics, embodied AI, GUI agents, autonomous driving, video understanding, 3D scene understanding, games, and more.
+A comprehensive, curated list of benchmarks for evaluating Vision-Language-Action (VLA) models — organized by application domain, covering embodied robotics, autonomous driving, GUI agents, game environments, multimodal perception, and more.
 
 ## Contents
 
 - [Overview](#overview)
-- [Robot Manipulation](#robot-manipulation)
-- [Dexterous Manipulation & Locomotion](#dexterous-manipulation--locomotion)
-- [Embodied Navigation](#embodied-navigation)
-- [Embodied Multi-Task & Household](#embodied-multi-task--household)
-- [3D Scene Understanding](#3d-scene-understanding)
-- [Social & Human-Robot Interaction](#social--human-robot-interaction)
-- [GUI & Computer-Use Agents](#gui--computer-use-agents)
+- [Embodied Robotics](#embodied-robotics)
+  - [Robot Manipulation](#robot-manipulation)
+  - [Dexterous Manipulation & Locomotion](#dexterous-manipulation--locomotion)
+  - [Embodied Navigation](#embodied-navigation)
+  - [Embodied Multi-Task & Household](#embodied-multi-task--household)
+  - [Social & Human-Robot Interaction](#social--human-robot-interaction)
 - [Autonomous Driving](#autonomous-driving)
-- [Video Understanding & Action Recognition](#video-understanding--action-recognition)
-- [Egocentric & Activity Benchmarks](#egocentric--activity-benchmarks)
+- [GUI & Computer-Use Agents](#gui--computer-use-agents)
 - [Game & Interactive Environments](#game--interactive-environments)
-- [Multimodal & General VLA Benchmarks](#multimodal--general-vla-benchmarks)
-- [Language-Grounded Perception](#language-grounded-perception)
-- [Simulation Environments & Platforms](#simulation-environments--platforms)
-- [Large-Scale Datasets & Model Hubs](#large-scale-datasets--model-hubs)
-- [Leaderboards & Evaluation Platforms](#leaderboards--evaluation-platforms)
+- [Multimodal Perception & Understanding](#multimodal-perception--understanding)
+  - [General Multimodal](#general-multimodal)
+  - [Video & Temporal Understanding](#video--temporal-understanding)
+  - [Egocentric & Activity](#egocentric--activity)
+  - [3D Scene Understanding](#3d-scene-understanding)
+  - [Language-Grounded Perception](#language-grounded-perception)
+- [Infrastructure & Resources](#infrastructure--resources)
+  - [Simulation Environments & Platforms](#simulation-environments--platforms)
+  - [Large-Scale Datasets & Model Hubs](#large-scale-datasets--model-hubs)
+  - [Leaderboards & Evaluation Platforms](#leaderboards--evaluation-platforms)
 - [Contributing](#contributing)
 
 ---
@@ -31,7 +34,11 @@ A comprehensive, curated list of benchmarks for evaluating Vision-Language-Actio
 
 ---
 
-## Robot Manipulation
+## Embodied Robotics
+
+Benchmarks for physical or simulated robots that must perceive, reason, and act in the real or virtual world.
+
+### Robot Manipulation
 
 Benchmarks focused on language-conditioned robot arm or bimanual manipulation tasks.
 
@@ -61,9 +68,7 @@ Benchmarks focused on language-conditioned robot arm or bimanual manipulation ta
 - **[RT-2](https://robotics-transformer2.github.io/)** - Robotic Transformer 2 combining internet-scale VLM pretraining with robot control evaluation.
 - **[OpenVLA](https://openvla.github.io/)** - Open-source VLA model evaluated on BridgeV2 and OXE tasks, available on HuggingFace.
 
----
-
-## Dexterous Manipulation & Locomotion
+### Dexterous Manipulation & Locomotion
 
 Benchmarks for fine motor skills, multi-fingered hands, and legged/mobile robots.
 
@@ -77,9 +82,7 @@ Benchmarks for fine motor skills, multi-fingered hands, and legged/mobile robots
 - **[MyoSuite](https://sites.google.com/view/myosuite)** - Musculoskeletal simulation benchmark for physiologically accurate hand and arm control tasks.
 - **[LEAP Hand](https://leaphand.com/)** - Low-cost dexterous hand platform with benchmark tasks for in-hand manipulation.
 
----
-
-## Embodied Navigation
+### Embodied Navigation
 
 Benchmarks requiring agents to navigate in 3D environments guided by language or vision.
 
@@ -98,9 +101,7 @@ Benchmarks requiring agents to navigate in 3D environments guided by language or
 - **[MP3D (Matterport3D)](https://niessner.github.io/Matterport/)** - Large-scale RGB-D dataset of real indoor environments widely used as a navigation substrate.
 - **[MultiON](https://multinav.github.io/)** - Multi-object navigation benchmark requiring sequential finding of multiple target objects.
 
----
-
-## Embodied Multi-Task & Household
+### Embodied Multi-Task & Household
 
 Benchmarks combining navigation, manipulation, and reasoning in household or open-world settings.
 
@@ -110,33 +111,13 @@ Benchmarks combining navigation, manipulation, and reasoning in household or ope
 - **[BEHAVIOR-1K](https://behavior.stanford.edu/)** - 1000 household activities grounded in real human needs, simulated in OmniGibson with rich annotations.
 - **[Habitat 3.0](https://aihabitat.org/)** - Embodied AI simulation for social navigation, collaboration, and rearrangement tasks.
 - **[ThreeDWorld (TDW)](https://www.threedworld.org/)** - Multi-modal physical simulation platform for transport, manipulation, and multi-agent tasks.
-- **[BabyAI](https://github.com/mila-iqia/babyai)** - Synthetic 2D gridworld benchmark for grounded language acquisition with 19 instruction levels.
-- **[TEACH](https://github.com/alexa/teach)** - TEAm Collaboration with Humans benchmark for collaborative household task completion with dialogue.
 - **[TEACh](https://github.com/alexa/teach)** - Execution from Dialog History: task completion in AI2-THOR via multi-turn dialogues.
 - **[LANMP](https://github.com/h2r/LANMP)** - Language-conditioned navigation and manipulation using a real mobile manipulator.
 - **[ARNOLD](https://arnold-benchmark.github.io/)** - A benchmark for language-conditioned articulated object state change in 3D scenes.
-- **[ScienceWorld](https://sciworld.apps.allenai.org/)** - Science experiment simulation benchmark requiring multi-step reasoning and action in a text+vision world.
 - **[Watch-And-Help](https://github.com/xavierpuigf/watch_and_help)** - A social intelligence benchmark for cooperation between agents in VirtualHome.
+- **[ProcTHOR](https://procthor.allenai.org/)** - Procedurally generated AI2-THOR houses for training and evaluating generalist embodied agents.
 
----
-
-## 3D Scene Understanding
-
-Benchmarks for grounding language in 3D space, enabling perception for embodied action.
-
-- **[ScanRefer](https://daveredrum.github.io/ScanRefer/)** - Language grounding benchmark for localizing objects in 3D point clouds using free-form descriptions.
-- **[SQA3D (Situated Question Answering)](https://sqa3d.github.io/)** - Situational reasoning benchmark where agents answer questions from a situated perspective in 3D scenes.
-- **[3D-VisTA](https://3d-vista.github.io/)** - Pre-trained transformer for 3D vision-language tasks covering grounding, QA, and dense captioning.
-- **[EmbodiedScan](https://tai-wang.github.io/embodiedscan/)** - Holistic 3D perception benchmark for embodied agents with RGB-D input from egocentric views.
-- **[MultiScan](https://3dlg-hcvc.github.io/multiscan/)** - Multi-scan indoor reconstruction dataset with articulated object annotations for VLA research.
-- **[LEO](https://embodied-generalist.github.io/)** - An embodied generalist agent benchmark requiring 3D scene understanding for grounded dialogue and planning.
-- **[ScanEnts3D](https://github.com/daveredrum/ScanEnts3D)** - Benchmark linking 3D scene entities to text mentions in descriptions for object grounding.
-- **[CLEVR3D](https://github.com/yancie-yjr/3d-clevr)** - 3D extension of CLEVR for spatial reasoning questions grounded in 3D synthetic environments.
-- **[Nu-Scenes QA](https://github.com/qiantianwen/NuScenes-QA)** - Question-answering benchmark grounded in outdoor 3D LiDAR scenes for autonomous driving reasoning.
-
----
-
-## Social & Human-Robot Interaction
+### Social & Human-Robot Interaction
 
 Benchmarks for collaborative, communicative, and socially-aware robot behavior.
 
@@ -146,6 +127,28 @@ Benchmarks for collaborative, communicative, and socially-aware robot behavior.
 - **[TDW-Social](https://www.threedworld.org/)** - Multi-agent social simulation tasks requiring cooperation and communication in TDW.
 - **[ProCo](https://github.com/ProCo-benchmark)** - Proactive cooperation benchmark for embodied agents requiring initiative and dialogue.
 - **[ConcepFusion / LangNav](https://github.com/concept-fusion/concept-fusion)** - Open-vocabulary 3D feature fields enabling natural language queries for navigation.
+
+---
+
+## Autonomous Driving
+
+Benchmarks for vision-language grounded driving decisions and planning.
+
+- **[nuScenes](https://www.nuscenes.org/)** - Large-scale autonomous driving dataset with 3D bounding boxes, maps, and rich sensor data.
+- **[Waymo Open Dataset](https://waymo.com/open/)** - High-quality driving dataset with LiDAR and camera data for perception and prediction.
+- **[CARLA Challenge](https://leaderboard.carla.org/)** - Open urban driving simulation benchmark requiring route completion and safety compliance.
+- **[DriveLM](https://github.com/OpenDriveLab/DriveLM)** - Vision-language driving benchmark with graph-structured QA over nuScenes scenes.
+- **[nuPlan](https://nuplan.org/)** - Closed-loop motion planning benchmark with expert demonstrations and reactive simulation.
+- **[LingoQA](https://github.com/wayveai/LingoQA)** - Video QA benchmark for driving scene understanding grounded in real-world footage.
+- **[BDD-X](https://github.com/JinkyuKimUCB/explainable-deep-driving)** - Explainable driving dataset with textual descriptions and justifications for driving actions.
+- **[Rank2Tell](https://github.com/LLVM-AD/rank2tell)** - Dataset for ranking and describing important objects in driving scenes.
+- **[MAPLM](https://github.com/LLVM-AD/MAPLM)** - Map-based language model benchmark for understanding HD maps in autonomous driving.
+- **[DriveBench](https://drive-bench.github.io/)** - Comprehensive benchmark evaluating VLMs across multiple driving perception and QA tasks.
+- **[NuScenes-QA](https://github.com/qiantianwen/NuScenes-QA)** - Large-scale visual question answering benchmark built on nuScenes with 460k QA pairs.
+- **[TOD3Cap](https://github.com/jxbbb/TOD3Cap)** - 3D dense captioning benchmark for autonomous driving with 2.3M descriptions.
+- **[VLAAD](https://github.com/keyanzhai/VLAAD)** - Vision-Language-Action benchmark for autonomous driving with natural language instructions.
+- **[DriveVLM](https://tsinghua-mars-lab.github.io/DriveVLM/)** - Evaluation framework integrating chain-of-thought VLM reasoning with motion planning.
+- **[MMAD](https://github.com/MMAD-Benchmark/MMAD)** - Massive multimodal autonomous driving benchmark with 18 perception and reasoning subtasks.
 
 ---
 
@@ -173,29 +176,48 @@ Benchmarks where a VLA agent perceives a screen (GUI) and takes keyboard/mouse a
 
 ---
 
-## Autonomous Driving
+## Game & Interactive Environments
 
-Benchmarks for vision-language grounded driving decisions and planning.
+Benchmarks in game or simulated worlds requiring sequential decision-making with language.
 
-- **[nuScenes](https://www.nuscenes.org/)** - Large-scale autonomous driving dataset with 3D bounding boxes, maps, and rich sensor data.
-- **[Waymo Open Dataset](https://waymo.com/open/)** - High-quality driving dataset with LiDAR and camera data for perception and prediction.
-- **[CARLA Challenge](https://leaderboard.carla.org/)** - Open urban driving simulation benchmark requiring route completion and safety compliance.
-- **[DriveLM](https://github.com/OpenDriveLab/DriveLM)** - Vision-language driving benchmark with graph-structured QA over nuScenes scenes.
-- **[nuPlan](https://nuplan.org/)** - Closed-loop motion planning benchmark with expert demonstrations and reactive simulation.
-- **[LingoQA](https://github.com/wayveai/LingoQA)** - Video QA benchmark for driving scene understanding grounded in real-world footage.
-- **[BDD-X](https://github.com/JinkyuKimUCB/explainable-deep-driving)** - Explainable driving dataset with textual descriptions and justifications for driving actions.
-- **[Rank2Tell](https://github.com/LLVM-AD/rank2tell)** - Dataset for ranking and describing important objects in driving scenes.
-- **[MAPLM](https://github.com/LLVM-AD/MAPLM)** - Map-based language model benchmark for understanding HD maps in autonomous driving.
-- **[DriveBench](https://drive-bench.github.io/)** - Comprehensive benchmark evaluating VLMs across multiple driving perception and QA tasks.
-- **[NuScenes-QA](https://github.com/qiantianwen/NuScenes-QA)** - Large-scale visual question answering benchmark built on nuScenes with 460k QA pairs.
-- **[TOD3Cap](https://github.com/jxbbb/TOD3Cap)** - 3D dense captioning benchmark for autonomous driving with 2.3M descriptions.
-- **[VLAAD](https://github.com/keyanzhai/VLAAD)** - Vision-Language-Action benchmark for autonomous driving with natural language instructions.
-- **[DriveVLM](https://tsinghua-mars-lab.github.io/DriveVLM/)** - Evaluation framework integrating chain-of-thought VLM reasoning with motion planning.
-- **[MMAD](https://github.com/MMAD-Benchmark/MMAD)** - Massive multimodal autonomous driving benchmark with 18 perception and reasoning subtasks.
+- **[NetHack Learning Environment (NLE)](https://github.com/facebookresearch/nle)** - Complex roguelike game benchmark for long-horizon decision making and language-conditioned play.
+- **[MineRL / MineDojo](https://minedojo.org/)** - Minecraft-based benchmark with 3000+ diverse open-ended tasks using internet-scale knowledge.
+- **[GROOT](https://github.com/GreyCampus/GROOT)** - Open-ended video game agent benchmark using Minecraft with skill learning and generalization.
+- **[Atari-HEAD](https://github.com/Atari-HEAD/Atari-HEAD)** - Human eye-tracking dataset for Atari games enabling human-like visual attention evaluation.
+- **[BabyAI](https://github.com/mila-iqia/babyai)** - Gridworld benchmark with procedurally generated language instructions at 19 difficulty levels.
+- **[MiniGrid / MiniWorld](https://github.com/Farama-Foundation/Minigrid)** - Lightweight 2D/3D grid environments for language-conditioned navigation and reasoning.
+- **[TextWorld](https://github.com/microsoft/TextWorld)** - Framework for generating and playing text-based adventure games to train language agents.
+- **[ScienceWorld](https://sciworld.apps.allenai.org/)** - Interactive science experiment simulation with 30 tasks requiring procedural multi-step reasoning.
+- **[CrafterBench](https://github.com/danijar/crafter)** - Open-world survival game benchmark measuring 22 achievements requiring long-horizon planning.
+- **[Voyager / DEPS](https://voyager.minedojo.org/)** - LLM-powered lifelong learning Minecraft agent evaluation framework.
+- **[BEHAVIOR (iGibson)](https://behavior.stanford.edu/)** - 100 household activities in iGibson simulation requiring physical commonsense reasoning.
 
 ---
 
-## Video Understanding & Action Recognition
+## Multimodal Perception & Understanding
+
+Benchmarks for evaluating visual, temporal, and language-grounded perception capabilities that underpin VLA models.
+
+### General Multimodal
+
+General-purpose benchmarks for evaluating multimodal reasoning, instruction following, and grounding.
+
+- **[MMMU](https://mmmu-benchmark.github.io/)** - Massive Multidisciplinary Multimodal Understanding benchmark with 11.5k expert-level questions.
+- **[MMBench](https://mmbench.opencompass.org.cn/)** - Systematic evaluation of VLMs across 20 capability dimensions with 3000 questions.
+- **[MME](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation)** - Comprehensive evaluation benchmark for MLLMs with 14 subtasks covering perception and cognition.
+- **[SEED-Bench](https://github.com/AILab-CVC/SEED-Bench)** - Multi-granularity evaluation for generative multimodal models with 19K questions across 12 dimensions.
+- **[HallusionBench](https://github.com/tianyi-lab/HallusionBench)** - Hallucination detection benchmark for visual understanding in VLMs.
+- **[POPE](https://github.com/AoiDragon/POPE)** - Polling-based object probing evaluation for object hallucination in VLMs.
+- **[TouchStone](https://github.com/OFA-Sys/TouchStone)** - VLM evaluation benchmark via GPT-4 scoring across 5 ability dimensions.
+- **[MMStar](https://mmstar-benchmark.github.io/)** - Elite multimodal benchmark of 1500 samples designed to minimize data leakage and require genuine VL reasoning.
+- **[CV-Bench](https://github.com/cambridgeltl/cv-bench)** - Challenging vision-language benchmark focused on compositional reasoning and spatial understanding.
+- **[RealWorldQA](https://x.ai/blog/grok-1.5v)** - Real-world spatial understanding benchmark from xAI testing physical world reasoning.
+- **[BLINK](https://zeyofu.github.io/blink/)** - Visual perception benchmark requiring human intuitive visual abilities that challenge VLMs.
+- **[WildVision](https://huggingface.co/spaces/WildVision/vision-arena)** - Real-world VLM evaluation via human preference collected from live user interactions.
+- **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)** - Open-source evaluation toolkit supporting 100+ VLMs across 50+ benchmarks.
+- **[MMTE](https://github.com/MMTE-benchmark/MMTE)** - Multimodal task execution benchmark evaluating models on following complex visual instructions.
+
+### Video & Temporal Understanding
 
 Benchmarks requiring understanding of temporal dynamics, actions, and causal reasoning in video.
 
@@ -215,9 +237,7 @@ Benchmarks requiring understanding of temporal dynamics, actions, and causal rea
 - **[VideoVista](https://github.com/HITsz-TMG/VideoVista)** - Diverse video understanding benchmark spanning 14 types of tasks and 35 categories.
 - **[DREAM-1K](https://github.com/TNT-Robotics/DREAM-1K)** - Benchmark for evaluating procedural video understanding needed for robot task planning.
 
----
-
-## Egocentric & Activity Benchmarks
+### Egocentric & Activity
 
 Benchmarks from a first-person perspective, closely aligned with robot/agent perception.
 
@@ -231,49 +251,21 @@ Benchmarks from a first-person perspective, closely aligned with robot/agent per
 - **[LEMMA](https://sites.google.com/view/lemma-activity)** - Multi-person, multi-task activity dataset for compositional action understanding.
 - **[EgoProceL](https://github.com/Sid2697/EgoProceL)** - Egocentric procedural learning benchmark for keystep recognition from instructional videos.
 
----
+### 3D Scene Understanding
 
-## Game & Interactive Environments
+Benchmarks for grounding language in 3D space, enabling perception for embodied action.
 
-Benchmarks in game or simulated worlds requiring sequential decision-making with language.
+- **[ScanRefer](https://daveredrum.github.io/ScanRefer/)** - Language grounding benchmark for localizing objects in 3D point clouds using free-form descriptions.
+- **[SQA3D (Situated Question Answering)](https://sqa3d.github.io/)** - Situational reasoning benchmark where agents answer questions from a situated perspective in 3D scenes.
+- **[3D-VisTA](https://3d-vista.github.io/)** - Pre-trained transformer for 3D vision-language tasks covering grounding, QA, and dense captioning.
+- **[EmbodiedScan](https://tai-wang.github.io/embodiedscan/)** - Holistic 3D perception benchmark for embodied agents with RGB-D input from egocentric views.
+- **[MultiScan](https://3dlg-hcvc.github.io/multiscan/)** - Multi-scan indoor reconstruction dataset with articulated object annotations for VLA research.
+- **[LEO](https://embodied-generalist.github.io/)** - An embodied generalist agent benchmark requiring 3D scene understanding for grounded dialogue and planning.
+- **[ScanEnts3D](https://github.com/daveredrum/ScanEnts3D)** - Benchmark linking 3D scene entities to text mentions in descriptions for object grounding.
+- **[CLEVR3D](https://github.com/yancie-yjr/3d-clevr)** - 3D extension of CLEVR for spatial reasoning questions grounded in 3D synthetic environments.
+- **[Nu-Scenes QA](https://github.com/qiantianwen/NuScenes-QA)** - Question-answering benchmark grounded in outdoor 3D LiDAR scenes for autonomous driving reasoning.
 
-- **[NetHack Learning Environment (NLE)](https://github.com/facebookresearch/nle)** - Complex roguelike game benchmark for long-horizon decision making and language-conditioned play.
-- **[MineRL / MineDojo](https://minedojo.org/)** - Minecraft-based benchmark with 3000+ diverse open-ended tasks using internet-scale knowledge.
-- **[GROOT](https://github.com/GreyCampus/GROOT)** - Open-ended video game agent benchmark using Minecraft with skill learning and generalization.
-- **[Atari-HEAD](https://github.com/Atari-HEAD/Atari-HEAD)** - Human eye-tracking dataset for Atari games enabling human-like visual attention evaluation.
-- **[BabyAI](https://github.com/mila-iqia/babyai)** - Gridworld benchmark with procedurally generated language instructions at 19 difficulty levels.
-- **[MiniGrid / MiniWorld](https://github.com/Farama-Foundation/Minigrid)** - Lightweight 2D/3D grid environments for language-conditioned navigation and reasoning.
-- **[TextWorld](https://github.com/microsoft/TextWorld)** - Framework for generating and playing text-based adventure games to train language agents.
-- **[ScienceWorld](https://sciworld.apps.allenai.org/)** - Interactive science experiment simulation with 30 tasks requiring procedural multi-step reasoning.
-- **[CrafterBench](https://github.com/danijar/crafter)** - Open-world survival game benchmark measuring 22 achievements requiring long-horizon planning.
-- **[Voyager / DEPS](https://voyager.minedojo.org/)** - LLM-powered lifelong learning Minecraft agent evaluation framework.
-- **[BEHAVIOR (iGibson)](https://behavior.stanford.edu/)** - 100 household activities in iGibson simulation requiring physical commonsense reasoning.
-- **[ProcTHOR](https://procthor.allenai.org/)** - Procedurally generated AI2-THOR houses for training and evaluating generalist embodied agents.
-
----
-
-## Multimodal & General VLA Benchmarks
-
-General-purpose benchmarks for evaluating multimodal reasoning, instruction following, and grounding.
-
-- **[MMMU](https://mmmu-benchmark.github.io/)** - Massive Multidisciplinary Multimodal Understanding benchmark with 11.5k expert-level questions.
-- **[MMBench](https://mmbench.opencompass.org.cn/)** - Systematic evaluation of VLMs across 20 capability dimensions with 3000 questions.
-- **[MME](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation)** - Comprehensive evaluation benchmark for MLLMs with 14 subtasks covering perception and cognition.
-- **[SEED-Bench](https://github.com/AILab-CVC/SEED-Bench)** - Multi-granularity evaluation for generative multimodal models with 19K questions across 12 dimensions.
-- **[HallusionBench](https://github.com/tianyi-lab/HallusionBench)** - Hallucination detection benchmark for visual understanding in VLMs.
-- **[POPE](https://github.com/AoiDragon/POPE)** - Polling-based object probing evaluation for object hallucination in VLMs.
-- **[TouchStone](https://github.com/OFA-Sys/TouchStone)** - VLM evaluation benchmark via GPT-4 scoring across 5 ability dimensions.
-- **[MMStar](https://mmstar-benchmark.github.io/)** - Elite multimodal benchmark of 1500 samples designed to minimize data leakage and require genuine VL reasoning.
-- **[CV-Bench](https://github.com/cambridgeltl/cv-bench)** - Challenging vision-language benchmark focused on compositional reasoning and spatial understanding.
-- **[RealWorldQA](https://x.ai/blog/grok-1.5v)** - Real-world spatial understanding benchmark from xAI testing physical world reasoning.
-- **[BLINK](https://zeyofu.github.io/blink/)** - Visual perception benchmark requiring human intuitive visual abilities that challenge VLMs.
-- **[WildVision](https://huggingface.co/spaces/WildVision/vision-arena)** - Real-world VLM evaluation via human preference collected from live user interactions.
-- **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)** - Open-source evaluation toolkit supporting 100+ VLMs across 50+ benchmarks.
-- **[MMTE](https://github.com/MMTE-benchmark/MMTE)** - Multimodal task execution benchmark evaluating models on following complex visual instructions.
-
----
-
-## Language-Grounded Perception
+### Language-Grounded Perception
 
 Benchmarks for visual grounding, referring expression comprehension, and spatial reasoning.
 
@@ -290,7 +282,11 @@ Benchmarks for visual grounding, referring expression comprehension, and spatial
 
 ---
 
-## Simulation Environments & Platforms
+## Infrastructure & Resources
+
+Simulation engines, datasets, and evaluation platforms used to build and run VLA benchmarks.
+
+### Simulation Environments & Platforms
 
 Simulation engines and platforms used to construct and run VLA benchmarks.
 
@@ -303,15 +299,13 @@ Simulation engines and platforms used to construct and run VLA benchmarks.
 - **[PyBullet / Panda-Gym](https://pybullet.org/)** - Open-source physics simulation with Panda robot gym environments for tabletop manipulation.
 - **[OmniGibson](https://behavior.stanford.edu/omnigibson/)** - NVIDIA Omniverse-based simulation for BEHAVIOR-1K with realistic physics and rendering.
 - **[Habitat-Sim](https://aihabitat.org/)** - High-performance 3D simulator for embodied AI with photorealistic rendering and physics.
-- **[AI2-THOR](https://ai2thor.allenai.org/)** - Photorealistic interactive indoor simulation for embodied household task research.
+- **[AI2-THOR (Simulator)](https://ai2thor.allenai.org/)** - Photorealistic interactive indoor simulation for embodied household task research.
 - **[CoppeliaSim (V-REP)](https://www.coppeliarobotics.com/)** - Versatile robot simulation platform underlying RLBench and other benchmarks.
 - **[CARLA](https://carla.org/)** - Open urban driving simulator with rich sensor modalities for autonomous driving research.
 - **[SUMO](https://eclipse.dev/sumo/)** - Microscopic traffic simulation supporting multi-modal transportation research.
 - **[XR-EgoBench](https://github.com/XR-EgoBench)** - Extended reality egocentric benchmark platform for AR/VR embodied agent evaluation.
 
----
-
-## Large-Scale Datasets & Model Hubs
+### Large-Scale Datasets & Model Hubs
 
 Key datasets and hubs that supply training and evaluation data for VLA models.
 
@@ -326,9 +320,7 @@ Key datasets and hubs that supply training and evaluation data for VLA models.
 - **[RH20T](https://rh20t.github.io/)** - Large-scale robotic dataset with 110k demonstrations across 20 tasks and temperature conditions.
 - **[Ego4D HuggingFace](https://huggingface.co/datasets/lmms-lab/Ego4D)** - Ego4D benchmark data accessible via HuggingFace for convenient evaluation.
 
----
-
-## Leaderboards & Evaluation Platforms
+### Leaderboards & Evaluation Platforms
 
 Platforms hosting challenges, competitions, and live leaderboards for VLA models.
 
@@ -357,7 +349,3 @@ Please ensure that:
 - The benchmark is relevant to VLA or embodied AI evaluation.
 - You provide a link to the official website, paper, or GitHub repository.
 - The description is concise (one sentence).
-
----
-
-If you find this list helpful, please consider giving it a ⭐!
