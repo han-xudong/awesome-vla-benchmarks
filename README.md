@@ -5,9 +5,9 @@
 [![Last Commit](https://img.shields.io/github/last-commit/han-xudong/awesome-vla-benchmarks)](https://github.com/han-xudong/awesome-vla-benchmarks/commits)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-A comprehensive, curated list of benchmarks for evaluating Vision-Language-Action (VLA) models — organized by application domain, covering embodied robotics, autonomous driving, GUI agents, game environments, multimodal perception, and more.
+> If you find this list helpful, please consider giving it a ⭐ — it helps others discover the resource!
 
-**Vision-Language-Action (VLA)** models unify visual perception, natural language understanding, and action generation into a single framework. Unlike pure vision-language models (VLMs), VLA models must produce *grounded, executable actions* in response to multimodal inputs. This list covers benchmarks from **all domains** where this capability is evaluated — including robotics, GUI navigation, autonomous driving, egocentric video, interactive games, and general multimodal reasoning.
+A curated list of benchmarks for evaluating **Vision-Language-Action (VLA)** models — systems that unify visual perception, language understanding, and executable action generation. Covers all major evaluation domains: embodied robotics, autonomous driving, GUI agents, game environments, egocentric video, and multimodal perception.
 
 ## Contents
 
