@@ -1,0 +1,152 @@
+name: PR Checks
+
+on:
+  pull_request:
+    paths:
+      - README.md
+      - CONTRIBUTING.md
+      - .github/CODEOWNERS
+      - .github/ISSUE_TEMPLATE/**
+      - .github/pull_request_template.md
+      - .github/workflows/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-and-repo-checks:
+    name: Markdown And Repo Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Lint markdown files
+        uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: |
+            README.md
+            CONTRIBUTING.md
+            .github/**/*.md
+
+      - name: Verify required repository files
+        run: |
+          test -f README.md
+          test -f CONTRIBUTING.md
+          test -f .github/CODEOWNERS
+          test -f .github/ISSUE_TEMPLATE/config.yml
+          test -f .github/ISSUE_TEMPLATE/broken-link.md
+          test -f .github/ISSUE_TEMPLATE/dataset-suggestion.md
+          test -f .github/ISSUE_TEMPLATE/metadata-correction.md
+          test -f .github/ISSUE_TEMPLATE/reclassification-request.md
+          test -f .github/pull_request_template.md
+
+      - name: Verify README points to contribution guide
+        run: grep -q '\[CONTRIBUTING.md\](CONTRIBUTING.md)' README.md
+
+      - name: Validate README table rows
+        run: |
+          python3 - <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          lines = Path("README.md").read_text(encoding="utf-8").splitlines()
+          errors = []
+          link_re = re.compile(r"\[.+?\]\(https?://[^\)]+\)")
+          header_re = re.compile(r"^\|\s*Name\s*\|")
+          sep_re = re.compile(r"^\|[-| ]+\|")
+
+          for index, line in enumerate(lines, 1):
+              if sep_re.match(line) or header_re.match(line) or not line.startswith("|"):
+                  continue
+
+              cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+              if len(cells) < 3:
+                  continue
+
+              name_cell, highlights_cell, refs_cell = cells[0], cells[1], cells[2]
+
+              if not re.match(r"^\[.+?\]\(https?://[^\)]+\)$", name_cell):
+                  errors.append(f"Line {index}: Name column must be a Markdown link. Got: {name_cell!r}")
+
+              if not highlights_cell:
+                  errors.append(f"Line {index}: Highlights column must not be empty.")
+
+              if not link_re.search(refs_cell):
+                  errors.append(f"Line {index}: References column must contain at least one Markdown link. Got: {refs_cell!r}")
+
+          if errors:
+              print("Validation errors found:\n")
+              for error in errors:
+                  print(f"- {error}")
+              sys.exit(1)
+          PY
+
+      - name: Check for duplicate entries
+        run: |
+          python3 - <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          content = Path("README.md").read_text(encoding="utf-8")
+          names = re.findall(r"^\|\s*\[(.+?)\]\(", content, re.MULTILINE)
+          seen = {}
+          duplicates = []
+
+          for name in names:
+              key = name.strip().lower()
+              if key in seen:
+                  duplicates.append(name.strip())
+              else:
+                  seen[key] = True
+
+          if duplicates:
+              print("Duplicate entries found:")
+              for duplicate in duplicates:
+                  print(f"- {duplicate}")
+              sys.exit(1)
+          PY
+
+  check-links:
+    name: Check Links In Changed Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install lychee
+        run: |
+          curl -sLO https://github.com/lycheeverse/lychee/releases/download/v0.15.1/lychee-v0.15.1-x86_64-unknown-linux-gnu.tar.gz
+          tar xzf lychee-v0.15.1-x86_64-unknown-linux-gnu.tar.gz
+          chmod +x lychee
+          sudo mv lychee /usr/local/bin/
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v46
+        with:
+          files: |
+            README.md
+            CONTRIBUTING.md
+            .github/**/*.md
+
+      - name: Check links in changed Markdown files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          lychee \
+            --no-progress \
+            --timeout 30 \
+            --retry-wait-time 5 \
+            --max-retries 3 \
+            --accept 401,403 \
+            --exclude "https://eval.ai" \
+            --exclude "https://docs.google.com" \
+            --exclude "https://leaderboard.carla.org" \
+            ${{ steps.changed-files.outputs.all_changed_files }}

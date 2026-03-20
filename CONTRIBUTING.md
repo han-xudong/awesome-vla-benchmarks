@@ -1,104 +1,136 @@
-# Contributing to Awesome VLA Benchmarks
+# Contributing
 
-Thank you for your interest in contributing! This list aims to be the most comprehensive and up-to-date collection of benchmarks for evaluating **Vision-Language-Action (VLA)** models.
+Thanks for helping improve this list.
 
-## Table of Contents
+This repository is benchmark-first. It does not try to be a general model index, paper list, or simulator catalog.
 
-- [What to Contribute](#what-to-contribute)
-- [How to Contribute](#how-to-contribute)
-- [Entry Format](#entry-format)
-- [Quality Guidelines](#quality-guidelines)
-- [Pull Request Checklist](#pull-request-checklist)
-- [Code of Conduct](#code-of-conduct)
+## Scope
 
----
+This repository collects publicly accessible benchmarks for VLA and closely related embodied agents, plus directly relevant supporting resources that make those benchmarks usable.
 
-## What to Contribute
+Good additions usually have all of the following:
 
-We welcome additions of:
+1. A public benchmark release, leaderboard, challenge page, evaluation codebase, or stable hosting link.
+2. A primary reference such as a paper, project page, or official repository.
+3. Clear relevance to agent evaluation: manipulation, navigation, driving, GUI control, multimodal reasoning for action, or another embodied decision-making setting.
 
-- **Benchmarks** for evaluating VLA models in any of the covered domains (robotics, driving, GUI agents, game environments, multimodal perception, etc.)
-- **Datasets** used for training or evaluating VLA models
-- **Simulation environments or platforms** relevant to VLA research
-- **Leaderboards or evaluation services** for VLA tasks
+Do not add:
 
-We are **not** looking for:
+- Model papers with no benchmark, evaluation suite, or released task definition.
+- General CV, NLP, or multimodal benchmarks with no meaningful VLA or embodied-agent relevance.
+- Simulators or tooling with no direct benchmark role, released tasks, or evaluation significance.
+- Private benchmarks behind institutional or commercial access with no public description or stable reference.
 
-- General-purpose LLM or vision-only benchmarks with no actionable or embodied component
-- Duplicates of existing entries
-- Benchmarks that are not publicly accessible or described in a paper/report
+## Contribution Flow
 
----
+For routine additions or metadata fixes:
 
-## How to Contribute
+1. Find the most specific section in `README.md`.
+2. Add or update the row using the repository style rules below.
+3. Open a pull request using the repository template.
 
-1. **Fork** this repository.
-2. **Create a branch** from `main` with a descriptive name, e.g. `add-<benchmark-name>`.
-3. **Edit `README.md`** to add your entry in the appropriate section table, following the [Entry Format](#entry-format) below.
-4. **Submit a pull request** against the `main` branch.
+Open an issue before a pull request if the change involves any of the following:
 
-A GitHub Actions workflow will automatically check your PR for formatting issues. Please address any failures before requesting a review.
+- renaming or merging sections
+- moving many entries across sections
+- changing repository-wide formatting conventions
+- reclassifying an entry whose placement is ambiguous
+- proposing a new top-level section
 
----
+## Placement
 
-## Entry Format
+Place each entry in the most specific section that matches its primary evaluation use.
 
-Each entry must be a row in the relevant Markdown table. The table has three columns:
+Examples:
 
-```markdown
-| Name | Highlights | References |
-|------|-----------|------------|
-| [Benchmark Name](https://official-website.com/) | [Venue Year] One-sentence description of what makes this benchmark notable | [arXiv](https://arxiv.org/abs/XXXX.XXXXX) · [GitHub](https://github.com/org/repo) · [Website](https://official-website.com/) |
+- Manipulation suites go under the embodied robotics sections, not general resources.
+- Driving evaluation suites go under autonomous driving, even if they include perception-only subtasks.
+- GUI or operating-system task suites go under GUI and computer-use agents.
+- Simulators, model hubs, and leaderboards belong under infrastructure and resources when they primarily support benchmark execution or comparison.
+
+If an entry could fit multiple sections, choose one primary location and mention the overlap in the description only if it materially helps readers.
+
+## Row Format
+
+Use the existing table format:
+
+```text
+| [Benchmark Name](project-url) | [Venue 2025] One-sentence description: what agent setting, what tasks, what scale, and what makes the benchmark practically useful. | [arXiv](arxiv-url) · [GitHub](github-url) · [website](project-url) |
 ```
 
-### Column rules
+Write concise descriptions. Prefer concrete facts over marketing language.
 
-| Column | Required | Description |
-|--------|----------|-------------|
-| **Name** | ✅ | A Markdown link `[Name](URL)` pointing to the benchmark's official website or primary resource |
-| **Highlights** | ✅ | `[Venue Year]` tag (if published) followed by a single concise sentence describing what distinguishes this benchmark |
-| **References** | ✅ | At least one reference link (arXiv, GitHub, or Website). Multiple links separated by ` · ` |
+Use this default information order in `Highlights`:
 
-### Reference link labels
+1. primary agent setting or task family
+2. scale such as tasks, scenarios, questions, hours, or environments
+3. major modalities or evaluation dimensions
+4. why the benchmark is practically useful, if that is still not obvious
 
-Use these standard labels for consistency:
+Include, when known:
 
-- `[arXiv](...)` — preprint or paper
-- `[GitHub](...)` — source code / dataset repository
-- `[Website](...)` — official project page
-- `[HF](...)` — HuggingFace model/dataset card
-- `[PDF](...)` — direct PDF link when no arXiv page exists
+- agent domain or embodiment
+- task family
+- scale such as tasks, scenes, scenarios, hours, or questions
+- major modalities such as RGB, video, language, actions, depth, proprioception, or tactile signals
 
----
+## Style Rules
 
-## Quality Guidelines
+Keep naming and formatting consistent with the rest of the repository.
 
-- **Relevance**: The benchmark must evaluate or train VLA models or closely related embodied-AI systems.
-- **Accessibility**: The benchmark (or at minimum its paper/description) must be publicly available.
-- **Conciseness**: The Highlights column should be one sentence. Avoid marketing language.
-- **Accuracy**: Double-check all links before submitting. Broken links will cause the automated check to fail.
-- **Placement**: Add the entry to the most appropriate existing section. If no section fits, propose a new one in your PR description and we will discuss it.
-- **Alphabetical / chronological order**: Within a table, entries do not need to be sorted, but try to group logically related entries together.
+- Use the official benchmark or project name when possible.
+- Prefer canonical venue names such as `RA-L`, `RSS`, `CoRL`, `ICRA`, `IROS`, `NeurIPS`, `ICLR`, `CVPR`, `ICCV`, and `ECCV`.
+- Prefer `GitHub` and `website` as the default reference labels for repository and project-page links.
+- Use `Hugging Face` in prose and use `HF` only when an existing table row already uses that shorthand or brevity materially helps readability.
+- Prefer canonical project pages over mirrors when both are available.
+- Keep section descriptions to a single short scope sentence when editing repository structure.
+- Write `Highlights` as one sentence unless a second sentence is necessary to avoid ambiguity.
+- Prefer factual wording over evaluative claims such as `state-of-the-art`, `powerful`, or `highly impactful`.
 
----
+For entries under resource-oriented sections such as simulation platforms, model hubs, or evaluation platforms:
 
-## Pull Request Checklist
+- describe the supporting role of the resource, not as if it were a benchmark itself
+- make it clear whether the item provides benchmark code, released tasks, data access, model artifacts, or leaderboard results
+- avoid dataset-style wording for resources whose main purpose is hosting, execution, or comparison
 
-Before submitting your PR, confirm the following:
+## Sorting Rules
 
-- [ ] The benchmark is relevant to VLA or embodied AI evaluation
-- [ ] The entry follows the three-column table format exactly
-- [ ] The **Name** column contains a valid Markdown link
-- [ ] The **References** column contains at least one working link
-- [ ] The **Highlights** description is one sentence and starts with a `[Venue Year]` tag (if applicable)
-- [ ] No existing entry for this benchmark is present in the list
-- [ ] All links in your addition are reachable (not 404)
-- [ ] The PR title clearly describes what is being added, e.g. `Add FooBench to Robot Manipulation`
+Keep every markdown table sorted using these rules:
 
----
+1. Sort by year in descending order.
+2. For entries in the same year, sort by venue strength with formal publications before weaker or informal releases.
+3. For entries in the same year and similar venue level, preserve the existing relative order unless there is a clear reason to change it.
 
-## Code of Conduct
+Use this practical venue priority as the default tie-breaker:
 
-This project follows the [Contributor Covenant](https://www.contributor-covenant.org/) Code of Conduct. By participating, you agree to uphold a welcoming and respectful environment for everyone.
+- Journal and top-tier archival venues first, such as `IJRR`, `TPAMI`, `IJCV`
+- Major conference venues next, such as `NeurIPS`, `ICLR`, `CVPR`, `ICCV`, `ECCV`
+- Robotics venues after that, such as `RSS`, `CoRL`, `ICRA`, `IROS`, `RA-L`
+- Informal or non-archival releases last, such as `arXiv`, `GitHub`, `website`
 
-If you have questions or suggestions that are not suitable for a pull request, feel free to open an [issue](https://github.com/han-xudong/awesome-vla-benchmarks/issues).
+This rule is intentionally pragmatic rather than perfectly exhaustive. Favor consistency over overfitting edge cases.
+
+## Verification Checklist
+
+Before opening a pull request, check that:
+
+1. Links resolve to the official source or a stable mirror.
+2. The venue and year label is accurate and consistent with the rest of the list.
+3. The entry is placed in the correct section.
+4. The table remains correctly sorted after your change.
+5. The markdown renders cleanly.
+
+If you are unsure whether an entry belongs, open an issue first.
+
+## Maintainer Review Checklist
+
+Maintainers should review each contribution against the following criteria:
+
+1. The proposed item is actually a benchmark or a directly relevant supporting resource.
+2. The item is not primarily a model-only paper, generic dataset, or tool with no benchmark role.
+3. The chosen section is the most specific valid location.
+4. Naming, venue style, and reference labels match repository conventions.
+5. The `Highlights` sentence is concrete, concise, and free of marketing language.
+6. Large taxonomy changes were discussed in an issue first.
+
+If a contribution is directionally useful but misplaced, prefer asking for reclassification or wording changes rather than rejecting it outright.
