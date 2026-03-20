@@ -1,7 +1,6 @@
 # Awesome VLA Benchmarks [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/han-xudong/awesome-vla-benchmarks/pulls)
-[![GitHub Stars](https://img.shields.io/github/stars/han-xudong/awesome-vla-benchmarks?style=social)](https://github.com/han-xudong/awesome-vla-benchmarks/stargazers)
 [![Last Commit](https://img.shields.io/github/last-commit/han-xudong/awesome-vla-benchmarks)](https://github.com/han-xudong/awesome-vla-benchmarks/commits)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
