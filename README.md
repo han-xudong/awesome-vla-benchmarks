@@ -70,6 +70,10 @@ Benchmarks focused on language-conditioned robot arm or bimanual manipulation ta
 | [Franka Kitchen](https://github.com/google-research/relay-policy-learning) | [CoRL 2019] Multi-task kitchen manipulation with a Franka Panda robot across 7 compound subtasks | [arXiv](https://arxiv.org/abs/1910.11956) · [GitHub](https://github.com/google-research/relay-policy-learning) |
 | [SpatialBench](https://github.com/kahnchana/spatial_bench) | Evaluates spatial reasoning capabilities of VLMs in manipulation contexts | [GitHub](https://github.com/kahnchana/spatial_bench) |
 | [π0 (pi-zero)](https://www.physicalintelligence.company/blog/pi0) | Physical Intelligence's large robot foundation model for diverse dexterous tasks | [arXiv](https://arxiv.org/abs/2410.24164) · [Website](https://www.physicalintelligence.company/blog/pi0) |
+| [VLABench](https://vlabench.github.io/) | [ICCV 2025] Large-scale benchmark for language-conditioned manipulation with long-horizon reasoning across 100 tasks and multiple dimensions | [arXiv](https://arxiv.org/abs/2412.18194) · [GitHub](https://github.com/OpenMOSS/VLABench) · [HF](https://huggingface.co/VLABench) · [Website](https://vlabench.github.io/) |
+| [RoboVerse](https://roboverseorg.github.io/) | [RSS 2025] Unified platform, dataset, and benchmark for scalable and generalizable robot learning across 5000+ tasks | [arXiv](https://arxiv.org/abs/2504.18904) · [GitHub](https://github.com/RoboVerseOrg/RoboVerse) · [Website](https://roboverseorg.github.io/) |
+| [MIKASA-Robo](https://sites.google.com/view/memorybenchrobots/) | [ICLR 2026] Benchmark for robotic tabletop manipulation with 32 memory-intensive tasks covering object, spatial, sequential, and capacity memory | [arXiv](https://arxiv.org/abs/2502.10550) · [GitHub](https://github.com/CognitiveAISystems/MIKASA-Robo) · [Website](https://sites.google.com/view/memorybenchrobots/) |
+| [RoboVLMs](https://robovlms.github.io/) | Comprehensive evaluation of VLMs as robot policy foundation models across manipulation tasks | [GitHub](https://github.com/Robot-VLAs/RoboVLMs) · [Website](https://robovlms.github.io/) |
 
 ### Dexterous Manipulation & Locomotion
 
@@ -93,6 +97,8 @@ Benchmarks requiring agents to navigate in 3D environments guided by language or
 
 | Name | Highlights | References |
 |------|-----------|------------|
+| [GOAT-Bench](https://mukulkhanna.github.io/goat-bench/) | [CVPR 2024] Multi-modal lifelong navigation benchmark with sequential object goals specified by category, language, or image in open-vocabulary settings | [GitHub](https://github.com/Ram81/goat-bench) · [Website](https://mukulkhanna.github.io/goat-bench/) |
+| [OpenEQA](https://open-eqa.github.io/) | [CVPR 2024] Embodied Question Answering in the era of foundation models with 1600+ questions spanning spatial, object, and functional understanding | [arXiv](https://arxiv.org/abs/2402.07351) · [GitHub](https://github.com/facebookresearch/open-eqa) · [Website](https://open-eqa.github.io/) |
 | [ScanQA](https://github.com/ATR-DBI/ScanQA) | [CVPR 2022] Spatial question answering grounded in 3D indoor point cloud environments | [arXiv](https://arxiv.org/abs/2112.10482) · [GitHub](https://github.com/ATR-DBI/ScanQA) |
 | [SOON](https://scenario-oriented-object-navigation.github.io/) | [CVPR 2021] Scenario-oriented object navigation requiring reasoning about object-scene relations | [arXiv](https://arxiv.org/abs/2103.17138) · [Website](https://scenario-oriented-object-navigation.github.io/) |
 | [ImageNav](https://github.com/facebookresearch/image-goal-nav-dataset) | [ICCV 2021] Navigation to a goal specified by an image rather than a category label | [GitHub](https://github.com/facebookresearch/image-goal-nav-dataset) |
@@ -115,6 +121,7 @@ Benchmarks combining navigation, manipulation, and reasoning in household or ope
 | Name | Highlights | References |
 |------|-----------|------------|
 | [Habitat 3.0](https://aihabitat.org/) | [ICLR 2024] Social navigation, collaboration, and rearrangement tasks in embodied AI simulation | [arXiv](https://arxiv.org/abs/2310.13724) · [GitHub](https://github.com/facebookresearch/habitat-sim) · [Website](https://aihabitat.org/) |
+| [EmbodiedBench](https://embodiedbench.github.io/) | [ICML 2025] Comprehensive benchmark evaluating MLLMs as embodied agents across 1128 tasks spanning high-level (household, habitat) and low-level (manipulation, navigation) with 6 capability dimensions | [arXiv](https://arxiv.org/abs/2502.09560) · [GitHub](https://github.com/EmbodiedBench/EmbodiedBench) · [Website](https://embodiedbench.github.io/) |
 | [ARNOLD](https://arnold-benchmark.github.io/) | [ICCV 2023] Language-conditioned articulated object state change tasks in 3D scenes | [arXiv](https://arxiv.org/abs/2304.04321) · [GitHub](https://github.com/arnold-benchmark/arnold) · [Website](https://arnold-benchmark.github.io/) |
 | [TEACh](https://github.com/alexa/teach) | [AAAI 2022] Task completion in AI2-THOR via multi-turn dialogue history | [arXiv](https://arxiv.org/abs/2202.03488) · [GitHub](https://github.com/alexa/teach) |
 | [ProcTHOR](https://procthor.allenai.org/) | [NeurIPS 2022] Procedurally generated AI2-THOR houses for training and evaluating generalist embodied agents | [arXiv](https://arxiv.org/abs/2206.06994) · [GitHub](https://github.com/allenai/procthor) · [Website](https://procthor.allenai.org/) |
@@ -162,6 +169,9 @@ Benchmarks for vision-language grounded driving decisions and planning.
 | [nuPlan](https://nuplan.org/) | Closed-loop motion planning benchmark with expert demonstrations and reactive simulation | [arXiv](https://arxiv.org/abs/2106.11810) · [GitHub](https://github.com/motional/nuplan-devkit) · [Website](https://nuplan.org/) |
 | [DriveBench](https://drive-bench.github.io/) | Comprehensive benchmark evaluating VLMs across multiple driving perception and QA tasks | [Website](https://drive-bench.github.io/) |
 | [VLAAD](https://github.com/keyanzhai/VLAAD) | Vision-Language-Action benchmark for autonomous driving with natural language instructions | [GitHub](https://github.com/keyanzhai/VLAAD) |
+| [LaMPilot](https://github.com/PurdueDigitalTwin/LaMPilot) | [CVPR 2024] Open benchmark dataset for autonomous driving evaluated via language model programs | [arXiv](https://arxiv.org/abs/2312.04489) · [GitHub](https://github.com/PurdueDigitalTwin/LaMPilot) |
+| [STSBench](https://github.com/LRP-IVC/STSBench) | Spatio-temporal scenario benchmark for evaluating MLLMs in interactive autonomous driving scenarios | [GitHub](https://github.com/LRP-IVC/STSBench) |
+| [Drive4C](https://github.com/porscheofficial/Drive4C) | Closed-loop benchmark assessing what foundation models need to enable language-guided autonomous driving | [GitHub](https://github.com/porscheofficial/Drive4C) |
 
 ---
 
@@ -188,6 +198,8 @@ Benchmarks where a VLA agent perceives a screen (GUI) and takes keyboard/mouse a
 | [Screen2Words](https://github.com/google-research-datasets/screen2words) | [UIST 2021] 112k human-annotated mobile UI screen summaries for screen captioning | [arXiv](https://arxiv.org/abs/2108.03353) · [GitHub](https://github.com/google-research-datasets/screen2words) |
 | [MiniWob++](https://miniwob.farama.org/) | [ICLR 2018] 100+ browser mini-tasks (clicking, typing, form filling) for web interaction | [GitHub](https://github.com/Farama-Foundation/miniwob-plusplus) · [Website](https://miniwob.farama.org/) |
 | [WindowsAgentArena](https://microsoft.github.io/WindowsAgentArena/) | 154 Windows OS tasks spanning productivity, web, and system applications | [arXiv](https://arxiv.org/abs/2409.08264) · [GitHub](https://github.com/microsoft/WindowsAgentArena) · [Website](https://microsoft.github.io/WindowsAgentArena/) |
+| [ScreenSpot-Pro](https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding) | GUI grounding benchmark for professional high-resolution computer use across complex desktop applications | [arXiv](https://arxiv.org/abs/2501.11747) · [GitHub](https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding) |
+| [Spider2-V](https://spider2-v.github.io/) | [NeurIPS 2024] 494 tasks testing multimodal agents at automating real-world data science and engineering workflows | [arXiv](https://arxiv.org/abs/2407.10956) · [GitHub](https://github.com/xlang-ai/Spider2-V) · [Website](https://spider2-v.github.io/) |
 
 ---
 
@@ -235,6 +247,8 @@ General-purpose benchmarks for evaluating multimodal reasoning, instruction foll
 | [TouchStone](https://github.com/OFA-Sys/TouchStone) | GPT-4 scored VLM evaluation across 5 ability dimensions | [arXiv](https://arxiv.org/abs/2308.16890) · [GitHub](https://github.com/OFA-Sys/TouchStone) |
 | [RealWorldQA](https://x.ai/blog/grok-1.5v) | Real-world spatial understanding benchmark from xAI testing physical world reasoning | [Website](https://x.ai/blog/grok-1.5v) |
 | [MMTE](https://github.com/MMTE-benchmark/MMTE) | Multimodal task execution benchmark for following complex visual instructions | [GitHub](https://github.com/MMTE-benchmark/MMTE) |
+| [MMIU](https://mmiu-bench.github.io/) | [ICLR 2025] Multimodal Multi-image Understanding benchmark with 7 image-relationship types, 52 tasks, and 11K questions for evaluating LVLMs | [arXiv](https://arxiv.org/abs/2408.02718) · [GitHub](https://github.com/OpenGVLab/MMIU) · [Website](https://mmiu-bench.github.io/) |
+| [MathVista](https://mathvista.github.io/) | [ICLR 2024] Mathematical reasoning in visual contexts benchmark requiring compositional reasoning across 28 math tasks and 5 visual types | [arXiv](https://arxiv.org/abs/2310.02255) · [GitHub](https://github.com/lupantech/MathVista) · [Website](https://mathvista.github.io/) |
 
 ### Video & Temporal Understanding
 
@@ -243,6 +257,7 @@ Benchmarks requiring understanding of temporal dynamics, actions, and causal rea
 | Name | Highlights | References |
 |------|-----------|------------|
 | [TemporalBench](https://github.com/mu-cai/TemporalBench) | [ICLR 2025] Fine-grained temporal video understanding benchmark for VLMs with 2M QA pairs | [arXiv](https://arxiv.org/abs/2410.20953) · [GitHub](https://github.com/mu-cai/TemporalBench) |
+| [Video-MME](https://video-mme.github.io/) | [CVPR 2025] First comprehensive evaluation benchmark of MLLMs in video analysis covering short/medium/long videos across 30 domains | [arXiv](https://arxiv.org/abs/2405.21075) · [GitHub](https://github.com/MME-Benchmarks/Video-MME) · [Website](https://video-mme.github.io/) |
 | [MVBench](https://github.com/OpenGVLab/Ask-Anything) | [CVPR 2024] 20 challenging temporal reasoning tasks for multi-task video understanding | [arXiv](https://arxiv.org/abs/2311.17437) · [GitHub](https://github.com/OpenGVLab/Ask-Anything) |
 | [EgoTaskQA](https://github.com/Buzz-Beater/EgoTaskQA) | [NeurIPS 2022] Egocentric video QA with task goal inference, procedural reasoning, and state tracking | [arXiv](https://arxiv.org/abs/2210.03929) · [GitHub](https://github.com/Buzz-Beater/EgoTaskQA) |
 | [STAR (Situated Reasoning)](https://bobbywu.com/STAR/) | [NeurIPS 2021] Situated temporal action reasoning with 4 question types grounded in real videos | [arXiv](https://arxiv.org/abs/2105.09912) · [Website](https://bobbywu.com/STAR/) |
@@ -273,6 +288,7 @@ Benchmarks from a first-person perspective, closely aligned with robot/agent per
 | [LEMMA](https://sites.google.com/view/lemma-activity) | [ECCV 2020] Multi-person, multi-task dataset for compositional action understanding | [arXiv](https://arxiv.org/abs/2007.03152) · [Website](https://sites.google.com/view/lemma-activity) |
 | [EGTEA Gaze+](https://cbs.ic.gatech.edu/fpv/) | [ECCV 2018] First-person cooking dataset with gaze and hand masks for fine-grained recognition | [arXiv](https://arxiv.org/abs/1801.09014) · [Website](https://cbs.ic.gatech.edu/fpv/) |
 | [EPIC-Kitchens Challenges](https://epic-kitchens.github.io/2024) | Annual challenges on action recognition, detection, anticipation, and retrieval | [Website](https://epic-kitchens.github.io/2024) |
+| [EgoPlan-Bench](https://github.com/ChenYi99/EgoPlan) | [IJCV 2024] Benchmarking MLLMs for human-level task planning from egocentric video with real-world household scenarios | [arXiv](https://arxiv.org/abs/2312.06722) · [GitHub](https://github.com/ChenYi99/EgoPlan) |
 
 ### 3D Scene Understanding
 
@@ -289,6 +305,7 @@ Benchmarks for grounding language in 3D space, enabling perception for embodied 
 | [ScanRefer](https://daveredrum.github.io/ScanRefer/) | [ECCV 2020] Localizes objects in 3D point clouds using free-form language descriptions | [arXiv](https://arxiv.org/abs/1912.08830) · [GitHub](https://github.com/daveredrum/ScanRefer) · [Website](https://daveredrum.github.io/ScanRefer/) |
 | [CLEVR3D](https://github.com/yancie-yjr/3d-clevr) | 3D extension of CLEVR for spatial reasoning questions in synthetic environments | [GitHub](https://github.com/yancie-yjr/3d-clevr) |
 | [Nu-Scenes QA](https://github.com/qiantianwen/NuScenes-QA) | QA benchmark grounded in outdoor 3D LiDAR scenes for driving reasoning | [arXiv](https://arxiv.org/abs/2305.14836) · [GitHub](https://github.com/qiantianwen/NuScenes-QA) |
+| [MMScan](https://tai-wang.github.io/mmscan) | [NeurIPS 2024] Multi-modal 3D scene dataset with 1.4M hierarchical grounded language annotations on 109k objects and benchmarks for visual grounding and QA | [arXiv](https://arxiv.org/abs/2312.16170) · [GitHub](https://github.com/rbler1234/MMScan) · [Website](https://tai-wang.github.io/mmscan) |
 
 ### Language-Grounded Perception
 
@@ -368,6 +385,7 @@ Platforms hosting challenges, competitions, and live leaderboards for VLA models
 | [Ego4D Challenges (EvalAI)](https://eval.ai/web/challenges/list) | Annual Ego4D challenge tracks on episodic memory, forecasting, AV, hands, and narrations | [Website](https://eval.ai/web/challenges/list) |
 | [BEHAVIOR-1K Leaderboard](https://behavior.stanford.edu/benchmark-guide.html) | Evaluation results for household activity agents in the BEHAVIOR benchmark | [Website](https://behavior.stanford.edu/benchmark-guide.html) |
 | [AgentBench Leaderboard](https://llmbench.ai/agent/data) | Rankings for LLM-as-agent performance across OS, web, game, and database tasks | [Website](https://llmbench.ai/agent/data) |
+| [EmbodiedBench Leaderboard](https://embodiedbench.github.io/) | CVPR 2026 challenge leaderboard for MLLM-based embodied agents across high-level and low-level tasks | [Website](https://embodiedbench.github.io/) |
 
 ---
 
