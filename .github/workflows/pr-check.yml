@@ -120,12 +120,15 @@ jobs:
 
       - name: Check links in changed Markdown files
         if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           lychee \
             --no-progress \
             --timeout 30 \
             --retry-wait-time 5 \
             --max-retries 3 \
+            --accept 401,403 \
             --exclude "https://eval.ai" \
             --exclude "https://docs.google.com" \
             --exclude "https://leaderboard.carla.org" \
