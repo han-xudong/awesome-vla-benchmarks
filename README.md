@@ -1,5 +1,10 @@
 # Awesome VLA Benchmarks [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/han-xudong/awesome-vla-benchmarks/pulls)
+[![GitHub Stars](https://img.shields.io/github/stars/han-xudong/awesome-vla-benchmarks?style=social)](https://github.com/han-xudong/awesome-vla-benchmarks/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/han-xudong/awesome-vla-benchmarks)](https://github.com/han-xudong/awesome-vla-benchmarks/commits)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
 A comprehensive, curated list of benchmarks for evaluating Vision-Language-Action (VLA) models — organized by application domain, covering embodied robotics, autonomous driving, GUI agents, game environments, multimodal perception, and more.
 
 **Vision-Language-Action (VLA)** models unify visual perception, natural language understanding, and action generation into a single framework. Unlike pure vision-language models (VLMs), VLA models must produce *grounded, executable actions* in response to multimodal inputs. This list covers benchmarks from **all domains** where this capability is evaluated — including robotics, GUI navigation, autonomous driving, egocentric video, interactive games, and general multimodal reasoning.
@@ -26,6 +31,7 @@ A comprehensive, curated list of benchmarks for evaluating Vision-Language-Actio
   - [Large-Scale Datasets & Model Hubs](#large-scale-datasets--model-hubs)
   - [Leaderboards & Evaluation Platforms](#leaderboards--evaluation-platforms)
 - [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -376,3 +382,11 @@ Please ensure that:
 - The benchmark is relevant to VLA or embodied AI evaluation.
 - You provide links to the official website, paper, or GitHub repository in the References column.
 - The Highlights description is concise (one sentence).
+
+---
+
+## License
+
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+This list is released under the [CC0 1.0 Universal](LICENSE) public domain dedication. You are free to copy, modify, and distribute this work, even for commercial purposes, without asking permission.
